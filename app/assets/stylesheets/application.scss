@@ -1,0 +1,164 @@
+@import "./reset";
+@import "./variable";
+
+header {
+  background-color: $mainBlue;
+  height: 20px;
+  width: 100vw;
+  .head-notice {
+    color: $white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+
+.sidebar {
+  float: left;
+  background-color: $lightNavy;
+  height: 100vh;
+  width: 300px;
+  &__user {
+    background-color: $darkNavy;
+    color: $white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 20px;
+    }
+    &__list {
+      display: flex;
+      padding-right: 20px;
+      li {
+        padding-left: 5px;
+        a:visited {
+          color: $white;
+        }
+      }
+    }
+  }
+  .sidebar__groups {
+    &__list {
+      padding: 20px;
+      color: $white;
+      &__group-name {
+        font-size: 15px;
+        padding: 0 0 5px 0;
+      }
+      &__group-message {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.main {
+  float: right;
+  background-color: $white;
+  height: 100vh;
+  width: calc(100vw - 300px);
+  position: relative;
+  &__header {
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    &__left {
+      &__group-name {
+        font-size: 20px;
+        color: $black;
+        padding: 35px 0 15px 0;
+        width: 200px;
+      }
+      &__member {
+        font-size: 12px;
+        color: $textGray;
+      }
+    }
+    &__edit {
+      color: $mainBlue;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      border: solid 1px $mainBlue;
+      a {
+        text-decoration: none;
+        &:visited {
+          color: $mainBlue;
+        }
+      }
+    }
+  }
+  &__body {
+    background-color: $lightGray;
+    height: calc(100vh - 100px - 90px);
+    padding: 0 40px;
+    &__message-list {
+      padding-top: 16px;
+      &__message {
+        padding: 20px 0;
+        &__user-name {
+          font-size: 16px;
+          color: $textNavy;
+          font-weight: bold;
+          padding-right: 10px;
+          float: left;
+        }
+        &__time {
+          font-size: 12px;
+          color: $textGray;
+        }
+        &__text {
+          font-size: 14px;
+          color: $textNavy;
+          padding-top: 10px;
+          clear: both;
+        }
+      }
+    }
+  }
+  &__footer{
+    background-color: $gray;
+    position: absolute;
+    bottom: 0;
+    width: calc(100vw - 380px);
+    padding: 20px 40px;
+    &__body {
+      display: flex;
+      #input {
+        font-size: 16px;
+        color: $textNavy;
+        border: none;
+        line-height: 50px;
+        padding-left: 10px;
+        width: calc(100% - 160px);
+      }
+      .image {
+        height: 50px;
+        padding-right: 10px;
+        background-color: $white;
+        .fa-image {
+          line-height: 50px;
+          a:visited {
+            color: $white;
+          }
+        }
+      }
+      #submit {
+        background-color: $mainBlue;
+        color: $white;
+        line-height: 50px;
+        padding: 0 25px;
+        margin-left: 15px;
+        border: none;
+        float: right;
+      }
+    }
+  }
+}
+
