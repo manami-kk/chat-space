@@ -1,0 +1,11 @@
+header {
+  background-color: $mainBlue;
+  height: 20px;
+  width: 100vw;
+  .head-notice {
+    color: $white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+  }
+}
