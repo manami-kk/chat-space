@@ -5,11 +5,11 @@
     .sidebar__user__name user-name
     %ul.sidebar__user__list
       %li
-        %a{:href => ""}
-          %i.fas.fa-edit
+        = link_to "#" do
+          = fa_icon "edit"
       %li
-        %a{:href => ""}
-          %i.fas.fa-cog
+        = link_to "#" do
+          = fa_icon "cog"
   .sidebar__groups
     .sidebar__groups__list
       .sidebar__groups__list__group-name group name 1
@@ -19,7 +19,7 @@
       .sidebar__groups__list__group-message latest message ZZZ
 .main
   .main__header
-    .main_header__left
+    .main__header__left
       .main__header__left__group-name group name
       .main__header__left__member MEMBER: AAA BBB CCC
     .main__header__edit
@@ -38,6 +38,6 @@
     %form.main__footer__body
       %input{:placeholder => "type a message", :type => "text", :class => "input"}/
       .image
-        %a{:href => ""}
-          %i.far.fa-image.fa-lg
+        = link_to "#" do
+          = fa_icon "image"
       %input{:type => "submit", :value => "Send", :class => "submit"}/
