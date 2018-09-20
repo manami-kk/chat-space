@@ -29,13 +29,15 @@
   &__groups {
     &__list {
       padding: 20px;
-      color: $white;
       &__group-name {
+        color: $white;
         font-size: 15px;
         padding-bottom: 5px;
       }
       &__group-message {
+        color: $white;
         font-size: 11px;
+        padding-bottom: 30px;
       }
     }
   }
