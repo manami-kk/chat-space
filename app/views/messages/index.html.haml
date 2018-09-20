@@ -1,43 +1,20 @@
-%header
-  .head-notice チャットグループが作成されました。
-.sidebar
-  .sidebar__user
-    .sidebar__user__name user-name
-    %ul.sidebar__user__list
-      %li
-        = link_to "#" do
-          = fa_icon "edit"
-      %li
-        = link_to "#" do
-          = fa_icon "cog"
-  .sidebar__groups
-    .sidebar__groups__list
-      .sidebar__groups__list__group-name group name 1
-      .sidebar__groups__list__group-message latest message XXX
-    .sidebar__groups__list
-      .sidebar__groups__list__group-name group name 2
-      .sidebar__groups__list__group-message latest message ZZZ
+= render partial: 'shared/side_bar', locals: { messages: @messages }
+
 .main
   .main__header
     .main__header__left
-      .main__header__left__group-name group name
+      .main__header__left__group-name
+        current-group-name
       .main__header__left__member MEMBER: AAA BBB CCC
-    .main__header__edit
-      %a{:href => ""} edit
+    .main__header__edit  edit
   .main__body
     .main__body__message-list
-      .main__body__message-list__message
-        .main__body__message-list__message__user-name user-name
-        .main__body__message-list__message__time 2018/09/07 12:00:00
-        .main__body__message-list__message__text hello hello hello
-      .main__body__message-list__message
-        .main__body__message-list__message__user-name user-name
-        .main__body__message-list__message__time 2018/09/07 12:11:11
-        .main__body__message-list__message__text yes yes yes
-  .main__footer
-    %form.main__footer__body
-      %input{:placeholder => "type a message", :type => "text", :class => "input"}/
-      .image
-        = link_to "#" do
-          = fa_icon "image"
-      %input{:type => "submit", :value => "Send", :class => "submit"}/
+      = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: "form__message", placeholder: "type a message"
+      .form__mask
+        = f.label :image, class: "form__mask__image" do
+          = fa_icon "image", class: "icon"
+          = f.file_field :image, class: "hidden"
+      = f.submit "Send", class: "form__submit"
