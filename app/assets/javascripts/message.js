@@ -33,7 +33,6 @@ $ (function() {
       contentType: false
     })
     .done(function(data) {
-      console.log(data);
       var html = buildHTML(data);
       $('.main__body__message-list').append(html);
       $('.form__message').val('');
@@ -45,5 +44,4 @@ $ (function() {
       alert('error');
     });
   });
-
 });
