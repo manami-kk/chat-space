@@ -3,7 +3,7 @@
     = message.user.name
   .main__body__message-list__message__time
     = format_posted_time(message.created_at)
-  .main__body__message-list__message__text
+  .main__body__message-list__message
     - if message.text.present?
       %p.main__body__message-list__message__text
         = message.text
