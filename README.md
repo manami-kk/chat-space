@@ -11,8 +11,8 @@
 |password|string|null: false|
 
 ### Association
+- has_many :group_users
 - has_many :groups, through: group_users
-- has_many :members
 - has_many :messages
 
 ## groupsテーブル
@@ -23,8 +23,8 @@
 |name|string|null: false|
 
 ### Association
+- has_many :group_users
 - has_many :users, through: group_users
-- has_many :members
 - has_many :messages
 
 ## group_usersテーブル
