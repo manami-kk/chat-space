@@ -58,10 +58,10 @@ $ (function() {
     }
 
     $.ajax({
-    url: location.href,
-    type: 'GET',
-    data: {message: {id: last_message_id}},
-    dataType: 'json',
+      url: location.href,
+      type: 'GET',
+      data: {message: {id: last_message_id}},
+      dataType: 'json',
     })
     .done(function(data) {
       $.each(data, function(i, data){
