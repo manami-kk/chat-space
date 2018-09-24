@@ -47,16 +47,18 @@ $ (function() {
   
   //自動更新機能
   $(function() {
-    setInterval(update, 3000);
+    if(location.href.match(/\/groups\/\d+\/messages/)) {
+      setInterval(update, 3000);
+    }
   });
 
   function update() {
     if ($('.message')[0]) {
-      var last_message_id = $('.message:last').data('messageId');
+      var last_message_id = $('.message:last').data('message-id');
     } else {
       var last_message_id = 0;
     }
-
+    
     $.ajax({
       url: location.href,
       type: 'GET',
