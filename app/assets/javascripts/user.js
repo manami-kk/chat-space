@@ -10,14 +10,14 @@ $(function() {
 
   $('#user-search-field.chat-group-form__input').on('keyup', function() {
     var input = $(this).val();
-    
+
     $.ajax({
       type: 'GET',
       url: '/users',
       data: { keyword: input },
       dataType: 'json'
     })
-    
+
     .done(function(users) {
       $('#user-search-result').empty();
       users.forEach(function(user){
@@ -45,7 +45,7 @@ $(function() {
     addUserToGroup(user_id, user_name);
       $(this).parent().remove();
   });
-  
+
   $(document).on("click", ".chat-group-user__btn--remove", function(){
     $(this).parent().remove();
   });
