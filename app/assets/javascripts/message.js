@@ -41,10 +41,10 @@ $ (function() {
       $('.main__body').animate({scrollTop: $('.main__body')[0].scrollHeight}, 'slow');
     })
     .fail(function(data) {
-      alert('error');
+      alert("メッセージ送信に失敗しました");
     });
   });
-  
+
   //自動更新機能
   $(function() {
     if(location.href.match(/\/groups\/\d+\/messages/)) {
@@ -76,4 +76,13 @@ $ (function() {
       alert("自動メッセージ取得に失敗しました");
     });
   };
+
+  //ファイルサイズのバリデーション
+  $('#message_image').on('change', function (e) {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 1) {
+      alert('ファイルサイズは1MBまでです');
+      $('input[type=file]').val('');
+    }
+  });
 });

@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'uploads-manami-kk'
+  config.fog_directory = 'uploads-manami-kk'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/uploads-manami-kk'
 end
